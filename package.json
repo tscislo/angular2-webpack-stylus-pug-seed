@@ -1,13 +1,12 @@
 {
-  "name": "angular2-webpack-seed",
+  "name": "angular2-webpack-stylus-pug-seed",
   "version": "0.0.1",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "start": "webpack --config webpack/webpack.dev.js --watch --NODE_ENV=dev",
     "postinstall": "typings install"
   },
-  "author": "MobileNext",
+  "author": "MobileNext (mobilenext@scislo.eu)",
   "license": "MIT",
   "dependencies": {
     "@angular/common": "2.0.0-rc.5",
