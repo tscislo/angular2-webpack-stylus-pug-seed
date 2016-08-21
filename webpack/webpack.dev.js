@@ -27,7 +27,8 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin(/* chunkName= */"vendor", /* filename= */"./vendor.bundle.js"),
     new HtmlWebpackPlugin({
       title: 'My fist Angular 2 app',
-      template: 'src/app/index.html'
+      template: 'src/app/index.html',
+      hash: true
     }),
     new BrowserSyncPlugin({
       host: 'localhost',
