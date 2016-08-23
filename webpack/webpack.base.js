@@ -1,6 +1,5 @@
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -21,20 +20,25 @@ module.exports = {
                 test: /\.ts(x?)$/,
                 loader: 'awesome-typescript-loader'
             },
-            {test: /\.styl$/, loader: 'style-loader!css-loader!stylus-loader'}
+            {
+                test: /\.styl$/,
+                loader: 'style-loader!css-loader!stylus-loader'
+            },
+            {
+                test: /\.pug|jade$/,
+                loader: 'pug-html-loader'
+            }
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({name: "vendor", filename: "./vendor.bundle.js"}),
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "vendor",
+            filename: "./vendor.bundle.js"
+        }),
         new HtmlWebpackPlugin({
             title: 'My fist Angular 2 app',
             template: 'src/index.html',
             hash: true
-        }),
-        new BrowserSyncPlugin({
-            host: 'localhost',
-            port: 3003,
-            server: {baseDir: ['bin']}
         })
     ]
 }
