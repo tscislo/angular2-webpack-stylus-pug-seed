@@ -5,4 +5,5 @@ reports
 typings
 out
 typings
+npm-debug.log
 .idea/
