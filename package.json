@@ -1,6 +1,6 @@
 {
   "name": "angular2-webpack-stylus-pug-seed",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Angular2 Webpack Stylus Pug Seed",
   "scripts": {
     "start": "webpack --config webpack/webpack.dev.js --watch",
