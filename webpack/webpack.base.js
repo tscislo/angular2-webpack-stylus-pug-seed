@@ -1,10 +1,10 @@
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var failPlugin = require('webpack-fail-plugin');
 
 module.exports = {
     entry: {
-        "vendor": "./src/app/vendor",
-        "app": "./src/app/boot"
+        "app": "./src/app/app"
     },
     output: {
         path: 'bin',
@@ -18,7 +18,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.ts(x?)$/,
-                loader: 'awesome-typescript-loader'
+                loader: 'ts-loader'
             },
             {
                 test: /\.styl$/,
@@ -43,10 +43,7 @@ module.exports = {
         ]
     },
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "vendor",
-            filename: "./vendor.bundle.js"
-        }),
+        failPlugin,
         new HtmlWebpackPlugin({
             title: 'My fist Angular 2 app',
             template: 'src/index.html',
