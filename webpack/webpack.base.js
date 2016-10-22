@@ -26,7 +26,7 @@ module.exports = {
             },
             {
                 test: /\.pug|jade$/,
-                loader: 'html!pug-html-loader'
+                loader: 'pug-html-loader'
             },
             {
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
