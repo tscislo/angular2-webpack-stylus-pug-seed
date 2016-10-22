@@ -1,6 +1,7 @@
 var webpack = require("webpack");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var failPlugin = require('webpack-fail-plugin');
+var common = require('./common');
 
 module.exports = {
     entry: {
@@ -11,7 +12,9 @@ module.exports = {
         filename: "[name].bundle.js"
     },
     resolve: {
-        extensions: ['', '.ts', '.js']
+        extensions: ['', '.ts', '.js'],
+        alias: {
+        }
     },
     devtool: 'source-map',
     module: {

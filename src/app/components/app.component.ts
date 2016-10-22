@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import SampleService from '../services/sample.service';
+import WeatherService from "../services/weather.service";
 
 @Component({
     selector: 'my-app',
@@ -7,11 +7,18 @@ import SampleService from '../services/sample.service';
 })
 
 export class AppComponent {
-    text: string = "My first Angular2 App!"
+    text: string = "Weather forecast!"
 
-    constructor(SampleService:SampleService) {
-        SampleService.someSampleMethod()
+    private temperature:number;
 
+    constructor(weatherService:WeatherService) {
+        weatherService.get().subscribe((temp:any) => {
+            this.temperature = temp;
+        }, (err) => {
+            console.error('Error!', err)
+        }, () => {
+            console.log('complete')
+        })
     }
 
 }

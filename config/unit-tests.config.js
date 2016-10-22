@@ -10,6 +10,7 @@
 */
 Error.stackTraceLimit = Infinity;
 
+require('rxjs/Rx')
 require('core-js');
 require('ts-helpers');
 require('zone.js/dist/zone');

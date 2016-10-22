@@ -3,6 +3,7 @@ import 'es6-shim';
 
 import 'reflect-metadata';
 import 'rxjs';
+import 'rxjs/Rx';
 import 'zone.js/dist/zone';
 
 import '@angular/common';
@@ -22,13 +23,13 @@ import {RouterModule} from '@angular/router';
 import {HttpModule} from '@angular/http';
 import {AppComponent} from './components/app.component';
 import SampleService from './services/sample.service';
+import WeatherService from './services/weather.service';
 
 require('../styl/index.styl');
 
-console.log('app.ts');
-
 @NgModule({
     imports: [
+        HttpModule,
         BrowserModule
     ],
     declarations: [
@@ -36,7 +37,8 @@ console.log('app.ts');
     ],
     bootstrap: [AppComponent],
     providers: [
-        SampleService
+        SampleService,
+        WeatherService
     ]
 })
 class AppSurvey {
