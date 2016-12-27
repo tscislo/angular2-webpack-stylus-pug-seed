@@ -5,7 +5,7 @@ var common = require('./common');
 
 module.exports = {
     entry: {
-        "app": "./src/app/app"
+        "app": "./src/app/app." + common.mode
     },
     output: {
         path: 'bin',

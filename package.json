@@ -5,7 +5,8 @@
   "scripts": {
     "start": "webpack --config webpack/webpack.dev.js --watch",
     "build": "webpack --config webpack/webpack.build.js",
-    "test:watch": "node ./node_modules/karma/bin/karma start",
+    "test:watch": "node ./node_modules/karma/bin/karma start --auto-watch --no-single-run",
+    "test": "node ./node_modules/karma/bin/karma start",
     "postinstall": "typings install"
   },
   "author": "MobileNext (mobilenext@scislo.eu)",
@@ -23,6 +24,7 @@
     "browser-sync-webpack-plugin": "1.0.1",
     "clean-webpack-plugin": "^0.1.10",
     "connect-modrewrite": "^0.9.0",
+    "core-js": "^2.4.1",
     "css-loader": "^0.23.1",
     "es5-shim": "^4.5.9",
     "es6-shim": "^0.35.1",
@@ -49,6 +51,7 @@
     "webpack": "^1.13.2",
     "webpack-config": "^4.0.0",
     "webpack-fail-plugin": "^1.0.5",
+    "yargs": "^6.5.0",
     "zone.js": "0.7.4"
   }
 }
