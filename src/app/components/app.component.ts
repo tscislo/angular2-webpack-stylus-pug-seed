@@ -9,11 +9,11 @@ import WeatherService from "../services/weather.service";
 export class AppComponent {
     text: string = "Weather forecast!"
 
-    private temperature:number;
+    private temperatures = [];
 
     constructor(weatherService:WeatherService) {
-        weatherService.get().subscribe((temp:any) => {
-            this.temperature = temp;
+        weatherService.get().subscribe((results) => {
+            this.temperatures = results;
         }, (err) => {
             console.error('Error!', err)
         }, () => {
